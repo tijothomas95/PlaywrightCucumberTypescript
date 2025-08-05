@@ -33,8 +33,11 @@ npx cucumber-js features/todo1.feature
 
 11. `tsconfig.json` is must as 📦 Tells the TypeScript compiler how to transpile .ts/.tsx files
 
-12. npm install tsyringe reflect-metadata // to add dependency injection and help manage dependencies cleanly across your step definitions
+12. `npm install tsyringe reflect-metadata` // to add dependency injection and help manage dependencies cleanly across your step definitions
 
+13. Add `@injectable(), @inject('page')` to all class invokes and its constructors.
+
+14. `npm run {script_from_package.json}` // to run the tests as cucumber
 
 
 Key points to clarify & fix
