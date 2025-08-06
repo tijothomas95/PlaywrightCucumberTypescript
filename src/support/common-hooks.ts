@@ -1,4 +1,4 @@
-import { After, AfterAll, Before, BeforeAll } from "@cucumber/cucumber";
+import { After, AfterAll, Before, BeforeAll, Status } from "@cucumber/cucumber";
 import { config } from "./config";
 import { Browser, chromium, firefox, webkit } from "@playwright/test";
 import { ICustomWorld } from "./custom-world";
@@ -28,11 +28,15 @@ BeforeAll(async function(){
 
 Before(async function(this: ICustomWorld) {
     this.context = await browser.newContext({
-        viewport: { width: 1920, height: 1080  },
+        viewport: { width: 1280, height: 720  },
     });
     this.page= await this.context.newPage();
     this.container = container.register('page', { useValue: this.page });
 });
+
+Before({ tags: '@debug'},async function (this:ICustomWorld) {
+    this.debug=true;
+})
 
 /* 
 In a Cucumber + TypeScript context (often using tsyringe for DI), this.container.resolve is used to:
@@ -45,11 +49,17 @@ Before({ tags: '@todo'},async function (this:ICustomWorld) {
     this.toDoPage=this.container.resolve(ToDoPage);
 })
 
-After(async function(){
-    await this.page?.close();
-    await this.context?.close();
-});
+After(async function ({ result }) {
+  if (result?.status === Status.FAILED) {
+    const screenshotBuffer = await this.page.screenshot({ type: 'png', fullPage: true });
 
+    // Attach to Allure
+    await this.attach(screenshotBuffer, 'image/png');
+  }
+  
+  await this.page?.close();
+  await this.context?.close();
+});
 
 AfterAll(async function () {
   await browser?.close();

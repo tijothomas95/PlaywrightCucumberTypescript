@@ -1,7 +1,7 @@
 @todo
 Feature: Todo Feature
 
-@smoke
+@smoke @debug
 Scenario Outline: Scenario to open Todo App Add Todo's
   Given I open the todo web application
   When I add new todo '<item>' to field

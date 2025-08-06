@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Cucumber ts-node",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "/opt/homebrew/bin/node",
+      "runtimeArgs": ["--nolazy"],
+      "program": "${workspaceFolder}/node_modules/@cucumber/cucumber/bin/cucumber-js",
+      "args": [
+        "features/*.feature",
+        "-r",
+        "src/**/*steps.ts",
+        "-r",
+        "src/**/*hooks.ts",
+        "--require-module",
+        "ts-node/register",
+        "--tags",
+        "@debug"
+      ],
+      "cwd": "${workspaceFolder}",
+      "sourceMaps": true,
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "openOnSessionStart",
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ]
+}
