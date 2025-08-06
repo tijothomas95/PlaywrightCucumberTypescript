@@ -39,6 +39,11 @@ npx cucumber-js features/todo1.feature
 
 14. `npm run {script_from_package.json}` // to run the tests as cucumber
 
+15. `npm install -D allure-cucumberjs` // to install cllure package
+16. Added multiple scripts in `package.json` to execute the test with allure-report.
+17. `npm run test:todo` // to run the tests
+18. `npm run allure:report` // to open the allure report
+
 
 Key points to clarify & fix
 1. Playwright Test config `playwright.config.ts` (defineConfig) is for Playwright Test runner
