@@ -9,6 +9,7 @@ export interface CucumberWorldContructorParams{
 }
 
 export interface ICustomWorld extends World {
+    debug?: boolean;
     page?: Page;
     browser?: Browser;
     context?: BrowserContext;
