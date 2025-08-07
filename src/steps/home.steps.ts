@@ -11,6 +11,15 @@ When("I add new todo {string} to field", async function(this: ICustomWorld, item
     await this.homePage.addTodoItem(item);
 });
 
-Then("I can validate {string} item is injected", function(this: ICustomWorld, item: string){
-    expect(this.homePage.todoListItems).toHaveText(item);
+When("I remove the {string} from todo list", async function (this: ICustomWorld, item:string) {
+    await this.homePage.removeTodoItem(item);
+});
+
+Then("I can validate {string} item is injected", async function(this: ICustomWorld, item: string){
+    expect(await this.homePage.isTodoItemListDisplayed()).toBeTruthy();
+    await expect(this.homePage.todoListItems).toHaveText(item);
+});
+
+Then("I can validate todo item list is not displayed", async function(this: ICustomWorld){
+    expect(await this.homePage.isTodoItemListDisplayed()).toBeFalsy();
 });

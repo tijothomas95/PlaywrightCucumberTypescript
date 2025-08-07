@@ -6,8 +6,9 @@
   "scripts": {
     "test:cucumber": "npx cucumber-js --config cucumber.mjs",
     "test:todo": "npx cucumber-js --config cucumber.mjs --tags=@todo",
-    "test:regression": "cucumber-js --config cucumber.mjs --parallel=3 --tags \"@mock and @regression\"",
-    "allure:report": "allure generate ./allure-results -o ./allure-report --clean && allure open ./allure-report"
+    "test:debug": "npx cucumber-js --config cucumber.mjs --tags=@debug",
+    "test:regression": "cucumber-js --config cucumber.mjs --parallel=3 --tags \"@todo and @regression\"",
+    "allure:report": "rm -rf ./allure-report && allure generate ./allure-results -o ./allure-report --clean && allure open ./allure-report"
 
   },
   "keywords": [],
