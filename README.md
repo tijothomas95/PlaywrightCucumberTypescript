@@ -30,10 +30,12 @@ Install playwright:
 - May delete playwright.config.ts as we are using config.ts to overwrite the default config
 
 Install @cucumber/cucumber:
+
 2. npm install @cucumber/cucumber
 - Validate package.json file for the dependency addition
 
-Folder struture:
+Folder structure:
+
 3. Add features folder with `sample.feature` file
 4. Add src folder with steps, page-objects, support
 
@@ -81,7 +83,7 @@ Import Playwright (chromium, firefox, webkit)
 Launch the browser manually
 Navigate to baseURL (you can read from your env config)
 
-🌍 What is World in Cucumber?
+What is World in Cucumber?
 In Cucumber.js, the World is a shared context object that is created fresh for each scenario. You can attach anything to it — like page, browser, test data, etc. — and use it across multiple step definitions.
 
 
