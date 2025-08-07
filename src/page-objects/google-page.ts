@@ -10,7 +10,7 @@ export class GooglePage{
 
     async openGooglePage(){
         let url = process.env.GOOGLE_URL;
-        console.log("Lanching todo page url " + url);
+        console.log("Lanching google page url " + url);
         await this.page.goto(url);
     }
 
