@@ -2,9 +2,9 @@ import { After, AfterAll, Before, BeforeAll, Status } from "@cucumber/cucumber";
 import { config } from "./config";
 import { Browser, chromium, firefox, webkit } from "@playwright/test";
 import { ICustomWorld } from "./custom-world";
-import { HomePage } from "../page-objects/home-page";
+import { TodoPage } from "../page-objects/todo-page";
 import { container } from "tsyringe";
-import { ToDoPage } from "../page-objects/todo-page";
+import { GooglePage } from "../page-objects/google-page";
 
 let browser: Browser;
 
@@ -45,8 +45,8 @@ Manage dependencies cleanly across your step definitions
 You use this.container.resolve(Class) to inject dependencies in your step files, hooks, or world.
 */
 Before({ tags: '@todo'},async function (this:ICustomWorld) {
-    this.homePage=this.container.resolve(HomePage);
-    this.toDoPage=this.container.resolve(ToDoPage);
+    this.todoPage=this.container.resolve(TodoPage);
+    this.googlePage=this.container.resolve(GooglePage);
 })
 
 After(async function ({ result }) {
