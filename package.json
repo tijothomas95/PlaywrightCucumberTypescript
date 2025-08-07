@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test:cucumber": "npx cucumber-js --config cucumber.mjs",
-    "test:todo": "npx cucumber-js --config cucumber.mjs --tags=@todo",
-    "test:debug": "npx cucumber-js --config cucumber.mjs --tags=@debug",
-    "test:regression": "cucumber-js --config cucumber.mjs --parallel=3 --tags \"@todo and @regression\"",
+    "test:todo": "npx cucumber-js --config cucumber.mjs --parallel 3 --tags \"@todo\"",
+    "test:debug": "npx cucumber-js --config cucumber.mjs --tags \"@debug\"",
+    "test:smoke": "npx cucumber-js --config cucumber.mjs --parallel 2 --tags \"@smoke\"",
+    "test:regression": "cucumber-js --config cucumber.mjs --parallel 2 --tags \"@regression\"",
     "allure:report": "rm -rf ./allure-report && allure generate ./allure-results -o ./allure-report --clean && allure open ./allure-report"
 
   },
