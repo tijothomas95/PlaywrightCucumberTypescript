@@ -1,3 +1,28 @@
+## Playwright + Cucumber + TypeScript + POM + Tsyringe + Allure
+
+This is a modern end-to-end test automation framework that combines:
+
+- ✅ [Playwright](https://playwright.dev/) – browser automation
+- ✅ [Cucumber.js](https://github.com/cucumber/cucumber-js) – BDD syntax with Gherkin
+- ✅ [TypeScript](https://www.typescriptlang.org/) – for type-safe coding
+- ✅ Page Object Model – clean abstraction of UI logic
+- ✅ [tsyringe](https://github.com/microsoft/tsyringe) – dependency injection
+- ✅ [Allure Reports](https://docs.qameta.io/allure/) – rich test reporting
+
+---
+
+## Why This Stack?
+
+- BDD makes tests more readable and business-aligned
+- POM keeps code organized and reusable
+- TypeScript + DI increases scalability
+- Allure provides powerful reporting
+- Playwright gives fast, reliable browser automation
+
+---
+
+## Project Setup
+
 
 Install playwright:
 1. npm init playwright
