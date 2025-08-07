@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 const env = 'dev'
 dotenv.config({ path: path.resolve(__dirname, '../../envs', `${env}.env`) });
-console.log("Inside: " + process.env.GOOGLE_URL)
+// console.log("Inside: " + process.env.GOOGLE_URL)
 
 export const config = {
     browser: "chromium",
