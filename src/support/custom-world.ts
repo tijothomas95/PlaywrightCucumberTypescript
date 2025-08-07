@@ -1,8 +1,8 @@
 import { IWorldOptions, setWorldConstructor, World } from "@cucumber/cucumber";
 import { Browser, BrowserContext, Page } from "@playwright/test";
-import { HomePage } from "../page-objects/home-page";
+import { TodoPage } from "../page-objects/todo-page";
 import { DependencyContainer } from "tsyringe";
-import { ToDoPage } from "../page-objects/todo-page";
+import { GooglePage } from "../page-objects/google-page";
 
 export interface CucumberWorldContructorParams{
     parameters: {[key: string]: string}
@@ -14,8 +14,8 @@ export interface ICustomWorld extends World {
     browser?: Browser;
     context?: BrowserContext;
     container?: DependencyContainer;
-    homePage?: HomePage;
-    toDoPage?: ToDoPage;
+    todoPage?: TodoPage;
+    googlePage?: GooglePage;
 };
 
 export class CustomWorld extends World implements ICustomWorld{
