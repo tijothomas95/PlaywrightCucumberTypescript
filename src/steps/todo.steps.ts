@@ -22,3 +22,7 @@ Then("I can validate {string} item is injected", async function(this: ICustomWor
 Then("I can validate todo item list is not displayed", async function(this: ICustomWorld){
     expect(await this.todoPage.isTodoItemListDisplayed()).toBeFalsy();
 });
+
+Then("I can validate fail test scenario", async function(this: ICustomWorld){
+    expect(true).toBeFalsy();
+});

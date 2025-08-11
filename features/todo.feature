@@ -25,3 +25,8 @@ Scenario Outline: Can remove todo item
   Examples:
     | item         | 
     | sample todo  |     
+
+@regression
+Scenario Outline: Can validate fail test scenario
+  Then I can validate fail test scenario
+  
