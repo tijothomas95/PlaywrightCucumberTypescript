@@ -5,6 +5,7 @@ import { ICustomWorld } from "./custom-world";
 import { TodoPage } from "../page-objects/todo-page";
 import { container } from "tsyringe";
 import { GooglePage } from "../page-objects/google-page";
+import { ProjectContext } from "../context/project-context";
 
 let browser: Browser;
 
@@ -45,6 +46,7 @@ Manage dependencies cleanly across your step definitions
 You use this.container.resolve(Class) to inject dependencies in your step files, hooks, or world.
 */
 Before({ tags: '@todo'},async function (this:ICustomWorld) {
+    this.projContext=this.container.resolve(ProjectContext);
     this.todoPage=this.container.resolve(TodoPage);
     this.googlePage=this.container.resolve(GooglePage);
 })
