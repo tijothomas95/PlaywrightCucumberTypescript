@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test:cucumber": "npx cucumber-js --config cucumber.mjs",
-    "test:todo": "npx cucumber-js --config cucumber.mjs --parallel 3 --tags \"@todo\"",
-    "test:debug": "npx cucumber-js --config cucumber.mjs --tags \"@debug\"",
-    "test:smoke": "npx cucumber-js --config cucumber.mjs --parallel 2 --tags \"@smoke\"",
-    "test:regression": "cucumber-js --config cucumber.mjs --parallel 2 --tags \"@regression\"",
-    "allure:report": "rm -rf ./allure-report && allure generate ./allure-results -o ./allure-report --clean && allure open ./allure-report"
-
+    "test:todo": "npm run clean:allure && npx cucumber-js --config cucumber.mjs --parallel 3 --tags \"@todo\"",
+    "test:debug": "npm run clean:allure && npx cucumber-js --config cucumber.mjs --tags \"@debug\"",
+    "test:smoke": "npm run clean:allure && npx cucumber-js --config cucumber.mjs --parallel 2 --tags \"@smoke\"",
+    "test:regression": "npm run clean:allure && npx cucumber-js --config cucumber.mjs --parallel 2 --tags \"@regression\"",
+    "clean:allure": "rimraf ./allure-results ./allure-report",
+    "allure:report": "allure generate ./allure-results -o ./allure-report --clean && allure open ./allure-report"
   },
   "keywords": [],
   "author": "",
@@ -22,11 +22,10 @@
     "@types/node": "^24.2.0",
     "allure-cucumberjs": "^3.3.3",
     "dotenv": "^17.2.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.2"
-  },
-  "dependencies": {
     "reflect-metadata": "^0.2.2",
-    "tsyringe": "^4.10.0"
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "tsyringe": "^4.10.0",
+    "typescript": "^5.9.2"
   }
 }
