@@ -1,4 +1,4 @@
-## Playwright + Cucumber + TypeScript + POM + Tsyringe + Allure
+## Playwright + TypeScript + Cucumber + Tsyringe + Allure
 
 This is a modern end-to-end test automation framework that combines:
 
@@ -83,17 +83,12 @@ Import Playwright (chromium, firefox, webkit)
 Launch the browser manually
 Navigate to baseURL (you can read from your env config)
 
-What is World in Cucumber?
+✅ World:
 In Cucumber.js, the World is a shared context object that is created fresh for each scenario. You can attach anything to it — like page, browser, test data, etc. — and use it across multiple step definitions.
 
-
-✅ setWorldConstructor(CustomWorld) – What It Does
+✅ setWorldConstructor(CustomWorld):
 The setWorldConstructor() function in Cucumber.js registers your custom World class so that each scenario gets its own fresh instance of that world.
 
-✅ this.container.resolve?
-
-In a Cucumber + TypeScript context (often using tsyringe for DI), this.container.resolve is used to:
-Access shared services or objects
-Manage dependencies cleanly across your step definitions
-You use this.container.resolve(Class) to inject dependencies in your step files, hooks, or world.
-
+✅ this.container.resolve:
+Access shared services or objects, manage dependencies cleanly across your step definitions.
+Use this.container.resolve(Class) to inject dependencies in your step files, hooks, or world.
