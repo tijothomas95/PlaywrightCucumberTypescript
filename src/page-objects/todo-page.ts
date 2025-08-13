@@ -37,7 +37,7 @@ export class TodoPage{
         console.log("Matched item found:" + await matchedItem.textContent());
         let deleteElem = matchedItem.locator("button[aria-label=\"Delete\"]");
         await matchedItem.hover();
-        await expect(deleteElem).toBeVisible();
+        await expect(deleteElem).toBeVisible({ timeout: 10000 });
         await deleteElem.click();
     }
 

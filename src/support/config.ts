@@ -1,9 +1,10 @@
 import path from 'path';
 import dotenv from 'dotenv';
 
-const env = 'dev'
+
+const env = process.env.ENV || 'dev';
 dotenv.config({ path: path.resolve(__dirname, '../../envs', `${env}.env`) });
-// console.log("Inside: " + process.env.GOOGLE_URL)
+//console.log("Inside: " + env);
 
 export const config = {
     browser: "chromium",
@@ -12,7 +13,7 @@ export const config = {
   }
 }
 
-/* //If we need to save the ursl in json and access those values:
+/* //If we need to save the urls in json and access those values:
 const env = process.env.TEST_ENV || 'dev';
 let filePath
 if (env == 'dev')
