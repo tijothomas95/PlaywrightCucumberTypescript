@@ -49,7 +49,6 @@ jobs:
           token: ${{ secrets.ACCESSTOKENTEST }}
           folder: allure-report
           clean: true
-
+      
       - name: Show Allure Report URL
-        if: always()
-        run: echo "Allure Report deployed at: https://tijothomas95.github.io/PlaywrightCucumberTypescript/"
+        run: echo "Allure Report deployed: https://tijothomas95.github.io/PlaywrightCucumberTypescript/"
