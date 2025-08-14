@@ -3,6 +3,9 @@ name: Playwright Cucumber Typescript
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -46,3 +49,7 @@ jobs:
           token: ${{ secrets.ACCESSTOKENTEST }}
           folder: allure-report
           clean: true
+
+      - name: Show Allure Report URL
+        if: always()
+        run: echo "Allure Report deployed at: https://tijothomas95.github.io/PlaywrightCucumberTypescript/"
