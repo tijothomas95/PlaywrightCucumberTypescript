@@ -48,7 +48,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./allure-report
           publish_branch: gh-pages
-          clean: true
       
       - name: Show Allure Report URL
+        continue-on-error: true
         run: echo "Allure Report deployed https://tijothomas95.github.io/PlaywrightCucumberTypescript/"
