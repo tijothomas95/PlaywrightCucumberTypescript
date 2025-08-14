@@ -43,6 +43,6 @@ jobs:
         if: always()
         uses: JamesIves/github-pages-deploy-action@v4.7.3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACCESSTOKENTEST }}
           folder: allure-report
           clean: true
