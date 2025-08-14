@@ -33,10 +33,11 @@ export class TodoPage{
     }
 
     async removeTodoItem(item: string){
+        await this.todoListItems.waitFor({ state: 'visible', timeout: 5000 });
         const matchedItem = this.todoListItems.filter({ hasText: item }).first();
         console.log("Matched item found:" + await matchedItem.textContent());
-        let deleteElem = matchedItem.locator("button[aria-label=\"Delete\"]");
         await matchedItem.hover();
+        let deleteElem = matchedItem.locator("button[aria-label=\"Delete\"]");
         await expect(deleteElem).toBeVisible({ timeout: 10000 });
         await deleteElem.click();
     }
