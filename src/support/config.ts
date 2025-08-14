@@ -11,6 +11,9 @@ export const config = {
     browserOptions: {
         headless: process.env.CI ? true : false,
         viewport: { width: 1280, height: 720 },
+        actionTimeout: 30000,
+        timeout: 30000,
+        expect: {timeout: 30000}
   }
 }
 

@@ -28,7 +28,7 @@ jobs:
         continue-on-error: true
 
       - name: Generate Allure HTML Report
-        run: npm run allure:report
+        run: npx allure generate ./allure-results -o ./allure-report --clean
 
       - name: Upload Allure Report Artifact
         uses: actions/upload-artifact@v4
