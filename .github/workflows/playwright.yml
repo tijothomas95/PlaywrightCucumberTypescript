@@ -22,6 +22,8 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Cucumber BDD Tests
+        env:
+          CI: true
         run: npm run test:todo
 
       - name: Generate Allure HTML Report
