@@ -7,7 +7,7 @@ dotenv.config({ path: path.resolve(__dirname, '../../envs', `${env}.env`) });
 //console.log("Inside: " + env);
 
 export const config = {
-    browser: "chromium",
+    browser: process.env.BROWSER || 'chromium',
     browserOptions: {
         headless: false, // or true
   }

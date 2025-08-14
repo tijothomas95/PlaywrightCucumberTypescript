@@ -1,6 +1,6 @@
 ## Playwright + TypeScript + Cucumber + Tsyringe + Allure
 
-This is a modern end-to-end test automation framework that combines:
+This is an end-to-end test automation framework that combines:
 
 - ✅ [Playwright](https://playwright.dev/) – browser automation
 - ✅ [Cucumber.js](https://github.com/cucumber/cucumber-js) – BDD syntax with Gherkin
@@ -22,7 +22,6 @@ This is a modern end-to-end test automation framework that combines:
 ---
 
 ## Project Setup
-
 
 Install playwright:
 1. npm init playwright
@@ -70,6 +69,7 @@ npx cucumber-js features/todo1.feature
 16. Added multiple scripts in `package.json` to execute the test with allure-report.
 17. `npm run test:todo` // to run the tests
 18. `npm run allure:report` // to open the allure report
+19. `npm install --save-dev cross-env` // helps to overwrite the env variables safely for test run
 
 
 Key points to clarify & fix
@@ -77,7 +77,7 @@ Key points to clarify & fix
 This config only works when you run tests with npx playwright test.
 It does not affect tests run with npx cucumber-js because Cucumber doesn't use this config.
 
-2. You must overwrite `playwright.config.ts` with a `config.ts` to create configguration for launch browsers explicitly using `common-hooks.ts` inside your Cucumber step definitions
+2. You must overwrite `playwright.config.ts` with a `config.ts` to create configuration for launch browsers explicitly using `common-hooks.ts` inside your Cucumber step definitions
 Since you run with Cucumber (npx cucumber-js), your step code must:
 Import Playwright (chromium, firefox, webkit)
 Launch the browser manually
