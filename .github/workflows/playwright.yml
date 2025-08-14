@@ -1,5 +1,8 @@
 name: Playwright Cucumber Typescript
 
+permissions:
+  contents: write
+
 on:
   workflow_dispatch:
 
@@ -48,4 +51,4 @@ jobs:
           clean: true
       
       - name: Show Allure Report URL
-        run: echo "Allure Report deployed: https://tijothomas95.github.io/PlaywrightCucumberTypescript/"
+        run: echo "Allure Report deployed https://tijothomas95.github.io/PlaywrightCucumberTypescript/"
