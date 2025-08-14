@@ -36,9 +36,9 @@ jobs:
           path: allure-report/
 
       - name: Deploy Allure Report to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        if: success() || failure()
+        if: always()
+        uses: JamesIves/github-pages-deploy-action@v4.7.3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.ACCESSTOKENTEST }}
           publish_dir: allure-report
           publish_branch: gh-pages
