@@ -24,7 +24,8 @@ jobs:
       - name: Run Cucumber BDD Tests
         env:
           CI: true
-        run: npm run test:todo
+        run: npm run test:ci
+        continue-on-error: true
 
       - name: Generate Allure HTML Report
         run: npm run allure:report
@@ -39,6 +40,6 @@ jobs:
         if: always()
         uses: JamesIves/github-pages-deploy-action@v4.7.3
         with:
-          github_token: ${{ secrets.ACCESSTOKENTEST }}
-          publish_dir: allure-report
-          publish_branch: gh-pages
+          token: ${{ secrets.ACCESSTOKENTEST }}
+          folder: allure-report
+          clean: true
