@@ -18,6 +18,11 @@ export async function createToken(request: APIRequestContext, requestBody: any):
   return response;
 }
 
+// export function readJson(filename: string): any {
+//   const filePath = path.join(__dirname, filename);
+//   return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+// }
+
 export async function createBooking( request: APIRequestContext, requestBody: any,
                                     username: string = 'admin', password: string = 'password123'): Promise<any> {
 
