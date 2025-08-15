@@ -20,8 +20,10 @@
   "type": "commonjs",
   "devDependencies": {
     "@cucumber/cucumber": "^12.1.0",
+    "@faker-js/faker": "^9.9.0",
     "@playwright/test": "^1.54.2",
     "@types/node": "^24.2.0",
+    "ajv": "^8.17.1",
     "allure-cucumberjs": "^3.3.3",
     "cross-env": "^10.0.0",
     "dotenv": "^17.2.1",
