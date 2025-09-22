@@ -5,7 +5,7 @@ Feature: Todo MVC Feature
     Given I open the todo mvc web application
 
   @smoke @debug
-  Scenario Outline: Can Add Todo item
+  Scenario Outline: Can validate MVC example list
     When I click mvc framework '<item>' examples
     Then I can validate '<item>' app list items displayed
 
