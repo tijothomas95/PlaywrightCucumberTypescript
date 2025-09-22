@@ -8,6 +8,7 @@ This is an end-to-end test automation framework that combines:
 - ✅ Page Object Model – clean abstraction of UI logic
 - ✅ [tsyringe](https://github.com/microsoft/tsyringe) – dependency injection
 - ✅ [Allure Reports](https://docs.qameta.io/allure/) – rich test reporting
+- ✅ Docker container – containerised execution
 
 ---
 
