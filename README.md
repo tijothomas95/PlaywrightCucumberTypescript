@@ -71,6 +71,10 @@ npx cucumber-js features/todo1.feature
 18. `npm run allure:report` // to open the allure report
 19. `npm install --save-dev cross-env` // helps to overwrite the env variables safely for test run
 
+Docker:
+Command to build Docker image: `docker build -t pw-ts-test .`
+Run: `docker-compose up --build`
+
 
 Key points to clarify & fix
 1. Playwright Test config `playwright.config.ts` (defineConfig) is for Playwright Test runner
