@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 
 const env = process.env.ENV || 'dev';
 dotenv.config({ path: path.resolve(__dirname, '../../envs', `${env}.env`) });
-//console.log("Inside: " + env);
+console.log("Inside: " + env);
 
 export const config = {
     browser: process.env.BROWSER || 'chromium',

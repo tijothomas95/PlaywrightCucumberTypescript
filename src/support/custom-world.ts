@@ -3,6 +3,7 @@ import { Browser, BrowserContext, Page } from "@playwright/test";
 import { TodoPage } from "../page-objects/todo-page";
 import { DependencyContainer } from "tsyringe";
 import { GooglePage } from "../page-objects/google-page";
+import { TodoMvcPage } from "../page-objects/todomvc-page";
 import { ProjectContext } from "../context/project-context";
 
 export interface CucumberWorldContructorParams{
@@ -17,6 +18,7 @@ export interface ICustomWorld extends World {
     projContext?: ProjectContext;
     container?: DependencyContainer;
     todoPage?: TodoPage;
+    todoMvcPage?: TodoMvcPage;
     googlePage?: GooglePage;
 };
 
