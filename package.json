@@ -10,8 +10,8 @@
     "test:smoke": "npm run clean:allure && npx cucumber-js --config cucumber.mjs --parallel 2 --tags \"@smoke\"",
     "test:regression": "npm run clean:allure && npx cucumber-js --config cucumber.mjs --parallel 2 --tags \"@regression\"",
     "test:webkit": "npm run clean:allure && npx cross-env BROWSER=webkit cucumber-js --config cucumber.mjs --parallel 3 --tags \"@todo\"",
-    "test:ci": "npm run clean:allure && npx cucumber-js --config cucumber.mjs --tags \"@todo\"",
-    "clean:allure": "rimraf ./allure-results ./allure-report",
+    "test:ci": "npm run clean:allure && npx cucumber-js --config cucumber.mjs --tags \"@todo or @mvc\"",
+    "clean:allure": "rimraf ./allure-results/* ./allure-report/*",
     "allure:report": "allure generate ./allure-results -o ./allure-report --clean && allure open ./allure-report"
   },
   "keywords": [],
