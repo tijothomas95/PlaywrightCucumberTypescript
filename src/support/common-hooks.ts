@@ -6,6 +6,7 @@ import { TodoPage } from "../page-objects/todo-page";
 import { container } from "tsyringe";
 import { GooglePage } from "../page-objects/google-page";
 import { ProjectContext } from "../context/project-context";
+import { TodoMvcPage } from "../page-objects/todomvc-page";
 
 let browser: Browser;
 
@@ -49,6 +50,11 @@ Before({ tags: '@todo'},async function (this:ICustomWorld) {
     this.projContext=this.container.resolve(ProjectContext);
     this.todoPage=this.container.resolve(TodoPage);
     this.googlePage=this.container.resolve(GooglePage);
+})
+
+Before({ tags: '@mvc'},async function (this:ICustomWorld) {
+    this.projContext=this.container.resolve(ProjectContext);
+    this.todoMvcPage=this.container.resolve(TodoMvcPage);
 })
 
 After(async function ({ result }) {

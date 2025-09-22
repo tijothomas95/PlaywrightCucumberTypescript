@@ -15,7 +15,7 @@ Scenario Outline: Can Add Todo item
     | second todo |
 
 
-@regression @debug
+@regression
 Scenario Outline: Can remove todo item
   When I add new todo '<item>' to field
   Then I can validate '<item>' item is injected
